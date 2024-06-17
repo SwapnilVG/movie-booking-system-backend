@@ -4,9 +4,11 @@ import morgan from 'morgan';
 import 'dotenv/config';
 import bodyParser from 'body-parser';
 
+const app = express()
 const corsOptions = {
     origin: [process.env.FRONTEND_URL],
     methods: ["POST", "GET", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
     optionsSuccessStatus: 204
 };
