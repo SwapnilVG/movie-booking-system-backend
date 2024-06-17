@@ -4,11 +4,16 @@ import morgan from 'morgan';
 import 'dotenv/config';
 import bodyParser from 'body-parser';
 
-const app = express();
-app.use(cors({
-    origin:[process.env.FRONTEND_URL],
-    methods:["POST","GET","PUT","DELETE"]
-}));
+const corsOptions = {
+    origin: [process.env.FRONTEND_URL],
+    methods: ["POST", "GET", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+    preflightContinue: false,
+    optionsSuccessStatus: 204
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
