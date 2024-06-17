@@ -7,8 +7,7 @@ import bodyParser from 'body-parser';
 const app = express();
 app.use(cors({
     origin:[process.env.FRONTEND_URL],
-    methods:["POST","GET","PUT","DELETE"],
-    credentials:true 
+    methods:["POST","GET","PUT","DELETE"]
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
