@@ -7,9 +7,7 @@ import bodyParser from 'body-parser';
 const corsOptions = {
     origin: [process.env.FRONTEND_URL],
     methods: ["POST", "GET", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
-    preflightContinue: false,
     optionsSuccessStatus: 204
 };
 
